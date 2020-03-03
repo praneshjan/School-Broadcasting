@@ -1,0 +1,11 @@
+{% extends 'staff/base.html' %}
+
+{% block content %}
+    <h2>Publish New Message</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <div class="form-group">
+        {{ form.as_p }}
+    </div>
+        <button type="submit" class="btn btn-primary">Publish</button>
+    </form>
+{% endblock %}
