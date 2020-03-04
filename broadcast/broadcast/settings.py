@@ -131,3 +131,7 @@ LOGOUT_REDIRECT_URL = '/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 
 STATIC_ROOT ='/home/pranesh/python_program/Code/ex1/broadcast/static'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

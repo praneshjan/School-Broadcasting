@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from datetime import date
 # Create your models here.
 
 class User(AbstractUser):
@@ -36,10 +37,14 @@ class Parent(models.Model):
 class Message(models.Model):
     grade_id = models.ForeignKey(Grade,on_delete=models.CASCADE)
     staff_id = models.ForeignKey(Staff,on_delete=models.CASCADE)
-    file_path = models.FileField()
+    file_path = models.FileField(upload_to='documents/')
     pub_date = models.DateField()
     topic_body = models.TextField()
     topic_title = models.CharField(max_length=50)
+
+    def save(self):
+        self.pub_date = date.today()
+        super(Message,self).save()
 
 class Status(models.Model):
     status_name= models.CharField(max_length=10)

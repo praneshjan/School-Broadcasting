@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from staff import views, urls
 from django.contrib.auth import views as auth_views
+from parent import urls as parenturls
+
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')),
@@ -26,4 +28,5 @@ urlpatterns = [
     path('check/', views.check_view),
     path('staff/', include(urls)),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('parent/',include(parenturls)),
 ]

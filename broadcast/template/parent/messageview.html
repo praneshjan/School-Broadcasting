@@ -1,0 +1,25 @@
+{% extends 'parent/base.html' %}
+{% block content %}
+<div class="container">
+<table class="table table-bordered">
+<tr>
+<td>title</td>
+<td>{{msg.topic_title}}</td>
+</tr>
+<tr>
+<td>Body</td>
+<td>{{msg.topic_body}}</td>
+</tr>
+<tr>
+<td>Publish Date</td>
+<td>{{msg.pub_date}}</td>
+</tr>
+<tr>
+<td>file_path</td>
+<td>{{msg.file_path}}</a></td>
+</tr>
+</table>
+<a href= "/parent/download/{{msg.id}}"><button>Download</button></a>
+<a href= "/parent/view/{{msg.id}}"><button>View</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'parent/base.html' %}
+{% block content %}
+
+<table class="table table-striped">
+    <tr>
+        <th>Topic</th>
+        <th>Publish Date</th>
+    </tr>
+{% for i in message %}
+<tr>
+<td><a href= "/parent/oldmessage/{{i.message_id.id}}">{{ i.message_id.topic_title }}</a></td>
+<td>{{ i.message_id.pub_date}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
