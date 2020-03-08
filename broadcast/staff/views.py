@@ -45,7 +45,7 @@ def publishView(request):
                         status = statusName,
                         )
                     mt.save()
-                return redirect('')
+                return redirect('/staff/dashboard')
         else:
             pv = PublishForm()
         return render(request,'staff/publish.html',{'form': pv})

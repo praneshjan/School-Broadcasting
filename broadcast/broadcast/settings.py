@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli.dashboard',
     'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,8 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'staff',
 ]
+
 AUTH_USER_MODEL = 'staff.User'
+
 GRAPPELLI_ADMIN_TITLE='School Broadcasting'
+
+GRAPPELLI_SWITCH_USER=True
+
+GRAPPELLI_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
